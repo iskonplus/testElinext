@@ -1,0 +1,15 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app-root
+{
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  // background-color: #cccccc;
+}

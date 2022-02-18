@@ -1,0 +1,16 @@
+footer{
+  width: 100%;
+  // background-color: aqua;
+}
+
+
+.container {
+  width: 1280px;
+  margin: auto;
+  // background-color: aquamarine;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  border-top: 2px solid #a3a3a3;
+}
