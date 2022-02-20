@@ -1,0 +1,43 @@
+<div class="wrapper_user_login">
+  <h2>Login TestElinext</h2>
+
+  <div class="wrapper_form">
+
+    <form #userForm="ngForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" #emailId="ngModel" [(ngModel)]="userLoginData.email" required placeholder="ex@ex.ex"
+          [pattern]="validEmail" />
+        <mat-error *ngIf="emailId.hasError('required')">Required field</mat-error>
+        <mat-error *ngIf="emailId.hasError('pattern')">Email incorrect</mat-error>
+      </mat-form-field>
+
+      <div class="example-container">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput (keyup)="onFocus(userForm)" name="input" [type]="hide ? 'password' : 'text'"
+            #passwordId="ngModel" [(ngModel)]="userLoginData.password" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <p [class]="errorLogIn" *ngIf="passwordId.hasError('required') || passwordId.touched">Required field
+        </p>
+        <p [class]="errorLogInTwo">Incorrect email or password</p>
+
+      </div>
+
+      <div class="example-button-row">
+        <button mat-raised-button color="primary" (click)="submitLogin(userForm)">Login</button>
+        <button mat-raised-button (click)="openRregistration($event)">Registration</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+

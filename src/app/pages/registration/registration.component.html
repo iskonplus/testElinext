@@ -1,0 +1,85 @@
+<div class="wrapper_registration">
+  <h2>Registration</h2>
+  <div class="wrapper_form">
+
+    <form #userForm="ngForm">
+
+      <div class="wrapper_input">
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>First name</mat-label>
+          <input matInput placeholder="First name" name="firstName" #firstName="ngModel" required
+            [(ngModel)]="usersForm.firstName" />
+          <mat-error *ngIf="firstName.hasError('required')">Required field</mat-error>
+        </mat-form-field>
+        
+
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>Last name</mat-label>
+          <input matInput placeholder="Last name" name="lastName" #lastName="ngModel" required
+            [(ngModel)]="usersForm.lastName" />
+          <mat-error *ngIf="lastName.hasError('required')">Required field</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="wrapper_input">
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>Country</mat-label>
+          <input matInput placeholder="Country" name="country" #country="ngModel" [(ngModel)]="usersForm.country" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>City</mat-label>
+          <input matInput placeholder="City" name="city" #city="ngModel" [(ngModel)]="usersForm.city" />
+        </mat-form-field>
+      </div>
+
+      <div class="wrapper_input">
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="+000-00-00-00-000" name="phone" #phone="ngModel" [(ngModel)]="usersForm.phone" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" name="email" #email="ngModel" required [(ngModel)]="usersForm.email" />
+          <mat-error *ngIf="email.hasError('required')">Required field</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput placeholder="Date of Birth" name="birth" #birth="ngModel" [(ngModel)]="usersForm.birth" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Education</mat-label>
+        <input matInput placeholder="Education" name="education" #education="ngModel"
+          [(ngModel)]="usersForm.education" />
+      </mat-form-field>
+
+      <div class="wrapper_input">
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>Login</mat-label>
+          <input matInput placeholder="Login" name="login" disabled #login="ngModel" [(ngModel)]="usersForm.email" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput name="input" [type]="hide ? 'password' : 'text'" #passwordId="ngModel"
+            [(ngModel)]="usersForm.password" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="passwordId.hasError('required')">Required field</mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <div class="example-button-row">
+        <button mat-raised-button color="primary" (click)="submitForm()">Send</button>
+      </div>
+
+    </form>
+  </div>
+</div>
