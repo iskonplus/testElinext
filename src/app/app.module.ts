@@ -6,17 +6,25 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components//header/header.component';
 import { FooterComponent } from './components//footer/footer.component';
 import { MainComponent } from './components//main/main.component';
+import { UserLoginModule } from './pages/user-login/user-login.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegistrationModule } from './pages/registration/registration.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserLoginModule,
+    BrowserAnimationsModule,
+    RegistrationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

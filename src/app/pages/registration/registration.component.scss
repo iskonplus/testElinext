@@ -1,0 +1,45 @@
+.wrapper_registration{
+  width: 60%;
+  margin: auto;
+  padding: 40px 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+h2{
+  text-align: center;
+  font-size: 34px;
+  color: #3F51B5;
+  margin-bottom: 40px;
+}
+
+form{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  input:-webkit-autofill {
+    box-shadow: 0 0 0 0px;
+    -webkit-box-shadow: 0 0 0 50px #ffffff inset;
+    -webkit-text-fill-color: #333;
+  }
+}
+
+.wrapper_input{
+display: flex;
+width: 100%;
+justify-content: space-between;
+
+.input{
+  width: 50%;
+}
+
+.input:first-child{
+  margin-right: 5px;
+}
+
+.input:last-child{
+  margin-left: 5px;
+}
+
+}
