@@ -7,8 +7,6 @@ export class UserPageService {
 
   constructor() { }
   getUserInfo() {
-    return JSON.parse(localStorage.getItem('users') || '');
+    return JSON.parse(localStorage.getItem('activeUser') || '');
   }
-
-  // const usersdateLocalStorage = JSON.parse(localStorage.getItem('users') || '');
 }

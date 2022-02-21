@@ -1,59 +1,95 @@
-.wrapper_userPage{
+.wrapper_userPage {
   width: 60%;
   margin: auto;
   padding: 40px 15px;
   background-color: #ffffff;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-h2{
-  text-align: center;
+h1 {
   font-size: 34px;
-  color: #3F51B5;
-  margin-bottom: 40px;
+  color: #3f51b5;
 }
 
-.wrapper_tab{
+.wrapper_tab {
   width: 700px;
-  min-height: 320px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   margin: auto;
+
+  .wrapper_form {
+    height: 230px;
+    margin-top: 10px;
+    overflow-y: scroll;
+
+    .wrapper_input {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      .input {
+        width: 50%;
+        margin-right: 10px;
+      }
+    }
+
+    .wrapper_input.whole_length{
+      .input {
+        width: 100%;
+        margin-right: 10px;
+
+      }
+    }
+  }
 }
 
-.wrapper_information{
+.wrapper_information {
   display: flex;
   margin-top: 20px;
-  // align-items: center;
+  align-items: center;
 
-
-  .block_photo{
+  .block_photo {
     border: 1px solid black;
-    width: 30%;
-    height: 250px;
+    width: 20%;
+    height: 150px;
     margin-right: 10px;
   }
-  .block_info{
+  .block_info {
     width: 70%;
     margin-left: 10px;
     text-align: start;
 
-    .wrapper_content{
+    form {
+      width: 80%;
+      :first-child {
+        width: 100%;
+      }
+    }
+
+    .wrapper_content {
       display: flex;
       justify-content: flex-start;
       align-items: flex-end;
 
-      .label{
+      .label {
         width: 30%;
-        color:#999999;
+        color: #999999;
       }
 
-      .content{
+      .content {
         width: 70%;
         color: #000000;
         font-size: 16px;
       }
     }
-
   }
+
+}
+
+.buttonAdd{
+  background-color: #fff;
+  margin-right: 10px;
+  color:#3f51b5;
 }

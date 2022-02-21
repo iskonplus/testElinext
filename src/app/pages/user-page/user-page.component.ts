@@ -9,26 +9,37 @@ import { UserPageService } from 'src/app/services/user-page.service';
 export class UserPageComponent implements OnInit {
 
   user = {
-    birth: "",
-city: "",
-country: "",
-education: "",
-email: "",
-firstName: "",
-lastName: "",
-password: "",
-phone: "",
-role: "user",
+    birth: null,
+    city: null,
+    country: null,
+    education: null,
+    email: null,
+    firstName: null,
+    lastName: null,
+    password: null,
+    phone: null,
+    studied: null,
+    married:null,
+    role: 'user'
   };
 
-  constructor(private userPageService: UserPageService ) { }
+  // userForm = {
+  //   birth: '',
+  //   city: '',
+  //   country: '',
+  //   education: '',
+  //   email: '',
+  //   firstName: '',
+  //   lastName: '',
+  //   password: '',
+  //   phone: '',
+  // };
+
+  constructor(private userPageService: UserPageService) { }
 
   ngOnInit(): void {
-
-      this.user = this.userPageService.getUserInfo()[0];
-      console.log(this.userPageService.getUserInfo()[0]);
-
-    }
+    this.user = this.userPageService.getUserInfo();
+  }
 
 
 
