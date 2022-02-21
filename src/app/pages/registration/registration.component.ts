@@ -21,9 +21,6 @@ export class RegistrationComponent implements OnInit {
     city: '',
     birth: '',
     role: 'user',
-    fullName: function () {
-    return `${this.firstName} ${this.lastName[0]}.`
-    }
   };
 
   hide = true;

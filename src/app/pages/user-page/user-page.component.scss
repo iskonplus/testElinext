@@ -1,0 +1,59 @@
+.wrapper_userPage{
+  width: 60%;
+  margin: auto;
+  padding: 40px 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+h2{
+  text-align: center;
+  font-size: 34px;
+  color: #3F51B5;
+  margin-bottom: 40px;
+}
+
+.wrapper_tab{
+  width: 700px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.wrapper_information{
+  display: flex;
+  margin-top: 20px;
+  // align-items: center;
+
+
+  .block_photo{
+    border: 1px solid black;
+    width: 30%;
+    height: 250px;
+    margin-right: 10px;
+  }
+  .block_info{
+    width: 70%;
+    margin-left: 10px;
+    text-align: start;
+
+    .wrapper_content{
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+      .label{
+        width: 30%;
+        color:#999999;
+      }
+
+      .content{
+        width: 70%;
+        color: #000000;
+        font-size: 16px;
+      }
+    }
+
+  }
+}

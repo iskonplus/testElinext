@@ -1,0 +1,62 @@
+<div class="wrapper_userPage">
+  <div class="wrapper_tab">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Information">
+
+        <div class="wrapper_information">
+          <div class="block_photo"></div>
+
+          <div class="block_info">
+            <h1>{{user.firstName}} {{user.lastName}}</h1>
+
+            <div class="wrapper_content">
+              <div class="label"><p>Email:</p></div>
+              <div class="content"><p>{{user.email}}</p></div>
+            </div>
+            <div class="wrapper_content">
+              <div class="label"><p>Phone:</p></div>
+              <div class="content"><p>{{user.phone}}</p></div>
+            </div>
+            <div class="wrapper_content">
+              <div class="label"><p>Lives:</p></div>
+              <div class="content"><p>{{user.country}}</p></div>
+            </div>
+            <div class="wrapper_content">
+              <div class="label"><p>Date of Birth:</p></div>
+              <div class="content"><p>{{user.birth}}</p></div>
+            </div>
+          </div>
+        </div>
+
+      </mat-tab>
+      <mat-tab label="Detailed information">
+        <div class="wrapper_information">
+        <div class="block_info">
+          <h1>{{user.firstName}} {{user.lastName}}</h1>
+
+          <div class="wrapper_content">
+            <div class="label"><p>Email:</p></div>
+            <div class="content"><p>{{user.email}}</p></div>
+          </div>
+          <div class="wrapper_content">
+            <div class="label"><p>Phone:</p></div>
+            <div class="content"><p>{{user.phone}}</p></div>
+          </div>
+          <div class="wrapper_content">
+            <div class="label"><p>Lives:</p></div>
+            <div class="content"><p>{{user.country}}</p></div>
+          </div>
+          <div class="wrapper_content">
+            <div class="label"><p>Date of Birth:</p></div>
+            <div class="content"><p>{{user.birth}}</p></div>
+          </div>
+        </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Add informatio">Content 3</mat-tab>
+    </mat-tab-group>
+
+
+
+  </div>
+  </div>

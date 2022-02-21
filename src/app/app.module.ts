@@ -9,6 +9,7 @@ import { MainComponent } from './components//main/main.component';
 import { UserLoginModule } from './pages/user-login/user-login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationModule } from './pages/registration/registration.module';
+import { UserPageModule } from './pages/user-page/user-page.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RegistrationModule } from './pages/registration/registration.module';
     AppRoutingModule,
     UserLoginModule,
     BrowserAnimationsModule,
-    RegistrationModule
+    RegistrationModule,
+    UserPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
