@@ -57,9 +57,11 @@ h1 {
     margin-right: 10px;
   }
   .block_info {
-    width: 70%;
+    width: 100%;
     margin-left: 10px;
     text-align: start;
+    display: flex;
+    flex-wrap: wrap;
 
     form {
       width: 80%;
@@ -69,6 +71,7 @@ h1 {
     }
 
     .wrapper_content {
+      width: 50%;
       display: flex;
       justify-content: flex-start;
       align-items: flex-end;
@@ -92,4 +95,5 @@ h1 {
   background-color: #fff;
   margin-right: 10px;
   color:#3f51b5;
+  border-radius: 5px;
 }

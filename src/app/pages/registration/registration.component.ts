@@ -11,21 +11,21 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
 
   usersForm = {
-    firstName: '',
-    lastName: '',
-    password: '',
-    email: '',
-    education: '',
-    phone: '',
-    country: '',
-    city: '',
-    birth: '',
-    role: 'user',
+    birth: null,
+    city: null,
+    country: null,
+    email: null,
+    firstName: null,
+    lastName: null,
+    password: null,
+    phone: null,
+    married: null,
+    role: 'user'
   };
 
   hide = true;
 
-  constructor(private router: Router, private registrationService:RegistrationService) { }
+  constructor(private router: Router, private registrationService: RegistrationService) { }
 
   submitForm() {
     this.registrationService.saveUser(this.usersForm);

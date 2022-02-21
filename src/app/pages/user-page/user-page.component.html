@@ -5,10 +5,10 @@
 
     <div class="block_info">
       <h1>{{user.firstName}} {{user.lastName}}</h1>
-      <form >
+      <form>
         <mat-form-field appearance="legacy">
           <mat-label>Your status?</mat-label>
-          <input matInput name="text"   placeholder="I'm happy." />
+          <input matInput name="text" placeholder="I'm happy." />
         </mat-form-field>
       </form>
     </div>
@@ -20,158 +20,234 @@
       <mat-tab label="Information">
 
         <div class="wrapper_information">
-        <div class="block_info">
+          <div class="block_info">
             <div class="wrapper_content" *ngIf="user.email">
-            <div class="label"><p>Email:</p></div>
-            <div class="content"><p>{{user.email}}</p></div>
+              <div class="label">
+                <p>Email:</p>
+              </div>
+              <div class="content">
+                <p>{{user.email}}</p>
+              </div>
+            </div>
+            <div class="wrapper_content" *ngIf="user.phone">
+              <div class="label">
+                <p>Phone:</p>
+              </div>
+              <div class="content">
+                <p>{{user.phone}}</p>
+              </div>
+            </div>
+            <div class="wrapper_content" *ngIf="user.country">
+              <div class="label">
+                <p>Lives:</p>
+              </div>
+              <div class="content">
+                <p>{{user.country}}, {{user.city}}</p>
+              </div>
+            </div>
+            <div class="wrapper_content" *ngIf="user.birth">
+              <div class="label">
+                <p>Date of Birth:</p>
+              </div>
+              <div class="content">
+                <p>{{user.birth}}</p>
+              </div>
+            </div>
+            <div class="wrapper_content" *ngIf="user.married">
+              <div class="label">
+                <p>Married:</p>
+              </div>
+              <div class="content">
+                <p>{{user.married}}</p>
+              </div>
+            </div>
+            <div class="wrapper_content" *ngIf="user.studied">
+              <div class="label">
+                <p>Studied:</p>
+              </div>
+              <div class="content">
+                <p>{{user.studied}}, {{user.yearsOfStudy}}</p>
+              </div>
+            </div>
+            <div class="wrapper_content" *ngIf="user.work">
+              <div class="label">
+                <p>Work:</p>
+              </div>
+              <div class="content">
+                <p>{{user.work}}, {{user.yearsOfWork}}</p>
+              </div>
+            </div>
           </div>
-          <div class="wrapper_content" *ngIf="user.phone">
-            <div class="label"><p>Phone:</p></div>
-            <div class="content"><p>{{user.phone}}</p></div>
-          </div>
-          <div class="wrapper_content" *ngIf="user.country">
-            <div class="label"><p>Lives:</p></div>
-            <div class="content"><p>{{user.country}}</p></div>
-          </div>
-          <div class="wrapper_content" *ngIf="user.birth">
-            <div class="label"><p>Date of Birth:</p></div>
-            <div class="content"><p>{{user.birth}}</p></div>
-          </div>
-        </div>
         </div>
       </mat-tab>
-      <mat-tab label="Add informatio" >
+      <mat-tab label="Add informatio">
         <div class="wrapper_form">
-                  <!-- <app-registration></app-registration> -->
-                  <form #userForm="ngForm">
+          <!-- you need to change to component start here -->
+          <form #userForm="ngForm">
 
-                    <div class="wrapper_input">
-                      <mat-form-field appearance="legacy" class="input">
-                        <mat-label>First name</mat-label>
-                        <input matInput placeholder="First name" name="firstName" #firstName="ngModel" required
-                          [(ngModel)]="user.firstName" />
-                        <mat-error *ngIf="firstName.hasError('required')">Required field</mat-error>
-                      </mat-form-field>
-
-
-                      <mat-form-field appearance="legacy" class="input">
-                        <mat-label>Last name</mat-label>
-                        <input matInput placeholder="Last name" name="lastName" #lastName="ngModel" required
-                          [(ngModel)]="user.lastName" />
-                        <mat-error *ngIf="lastName.hasError('required')">Required field</mat-error>
-                      </mat-form-field>
-                    </div>
-
-                    <div class="wrapper_input">
-                      <mat-form-field appearance="legacy" class="input">
-                        <mat-label>Country</mat-label>
-                        <input matInput placeholder="Country" name="country" #country="ngModel" [(ngModel)]="user.country" />
-                      </mat-form-field>
-
-                      <mat-form-field appearance="legacy" class="input">
-                        <mat-label>City</mat-label>
-                        <input matInput placeholder="City" name="city" #city="ngModel" [(ngModel)]="user.city" />
-                      </mat-form-field>
-                    </div>
-
-                    <div class="wrapper_input">
-                      <mat-form-field appearance="legacy" class="input">
-                        <mat-label>Phone</mat-label>
-                        <input matInput placeholder="+000-00-00-00-000" name="phone" #phone="ngModel" [(ngModel)]="user.phone" />
-                      </mat-form-field>
-
-                      <mat-form-field appearance="legacy" class="input">
-                        <mat-label>Email</mat-label>
-                        <input matInput placeholder="Email" name="email" #email="ngModel" required [(ngModel)]="user.email" />
-                        <mat-error *ngIf="email.hasError('required')">Required field</mat-error>
-                      </mat-form-field>
-                    </div>
-
-                    <div class="wrapper_input">
-                    <mat-form-field appearance="legacy" class="input">
-                      <mat-label>Date of Birth</mat-label>
-                      <input matInput placeholder="Date of Birth" name="birth" #birth="ngModel" [(ngModel)]="user.birth" />
-                    </mat-form-field>
-
-                    <mat-form-field appearance="legacy" class="input">
-                      <mat-label>Married</mat-label>
-                      <input matInput placeholder="Yes" name="married" #married="ngModel"
-                        [(ngModel)]="user.married" />
-                    </mat-form-field>
-                  </div>
-
-                  <div class="wrapper_input whole_length">
-                    <mat-form-field appearance="legacy" class="input">
-                      <mat-label>Studied</mat-label>
-                      <input matInput placeholder="Studied" name="studied" #studied="ngModel" [(ngModel)]="user.studied" />
-                    </mat-form-field>
-
-                    <button class="buttonAdd" mat-mini-fab >+</button>
-
-                  </div>
+            <div class="wrapper_input">
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>First name</mat-label>
+                <input matInput placeholder="First name" name="firstName" #firstName="ngModel" required
+                  [(ngModel)]="user.firstName" />
+                <mat-error *ngIf="firstName.hasError('required')">Required field</mat-error>
+              </mat-form-field>
 
 
-        <!--
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>Last name</mat-label>
+                <input matInput placeholder="Last name" name="lastName" #lastName="ngModel" required
+                  [(ngModel)]="user.lastName" />
+                <mat-error *ngIf="lastName.hasError('required')">Required field</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="wrapper_input">
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>Country</mat-label>
+                <input matInput placeholder="Country" name="country" #country="ngModel" [(ngModel)]="user.country" />
+              </mat-form-field>
+
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>City</mat-label>
+                <input matInput placeholder="City" name="city" #city="ngModel" [(ngModel)]="user.city" />
+              </mat-form-field>
+            </div>
+
+            <div class="wrapper_input">
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>Phone</mat-label>
+                <input matInput type="tel" placeholder="+000-00-00-00-000" name="phone" #phone="ngModel"
+                  [(ngModel)]="user.phone" />
+              </mat-form-field>
+
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Email" name="email" #email="ngModel" required [(ngModel)]="user.email" />
+                <mat-error *ngIf="email.hasError('required')">Required field</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="wrapper_input">
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput type="date" placeholder="Date of Birth" name="data" #birth="ngModel" [(ngModel)]="user.birth" />
+              </mat-form-field>
+
+
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>Married</mat-label>
+                <input matInput placeholder="Ivanov Ivan" name="married" #married="ngModel"
+                  [(ngModel)]="user.married" />
+              </mat-form-field>
+            </div>
+
+            <!-- end here -->
+
+            <div class="wrapper_input">
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>Studied</mat-label>
+                <input matInput placeholder="Studied" name="studied" #studied="ngModel" [(ngModel)]="user.studied" />
+              </mat-form-field>
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>Years of study</mat-label>
+                <input matInput placeholder="2000-2005" name="yearsOfStudy" #yearsOfStudy="ngModel"
+                  [(ngModel)]="user.yearsOfStudy" />
+              </mat-form-field>
+
+              <button class="buttonAdd" mat-mini-fab (click)="zzz()">+</button>
+            </div>
+
+
+            <div class="wrapper_input">
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>Work</mat-label>
+                <input matInput placeholder="Work" name="work" #work="ngModel" [(ngModel)]="user.work" />
+              </mat-form-field>
+              <mat-form-field appearance="legacy" class="input">
+                <mat-label>Years of work</mat-label>
+                <input matInput placeholder="2000-2005" name="yearsOfWork" #yearsOfWork="ngModel"
+                  [(ngModel)]="user.yearsOfWork" />
+              </mat-form-field>
+
+              <button class="buttonAdd" mat-mini-fab (click)="zzz()">+</button>
+            </div>
+
+
                     <div class="example-button-row">
-                      <button mat-raised-button color="primary" (click)="submitForm()">Send</button>
-                    </div> -->
+                      <button mat-raised-button color="primary" (click)="submitForm()">Save</button>
+                    </div>
 
-                  </form>
-                </div>
-                  <!-- <app-registration></app-registration> -->
+          </form>
+        </div>
+
 
       </mat-tab>
     </mat-tab-group>
   </div>
-  </div>
+</div>
 
 
-  <div class="wrapper_userPage">
+<div class="wrapper_userPage">
   <div class="wrapper_tab">
     <mat-tab-group animationDuration="0ms">
       <mat-tab label="Publications">
 
         <div class="wrapper_information">
-        <div class="block_info">
+          <div class="block_info">
 
-        </div>
+          </div>
         </div>
       </mat-tab>
       <mat-tab label="Photo">Content 3</mat-tab>
     </mat-tab-group>
   </div>
-  </div>
+</div>
 
 
-  <div class="wrapper_userPage">
-    <div class="wrapper_tab">
-      <mat-tab-group animationDuration="0ms">
-        <mat-tab label="Information">
+<div class="wrapper_userPage">
+  <div class="wrapper_tab">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Information">
 
-          <div class="wrapper_information">
+        <div class="wrapper_information">
           <div class="block_info">
-              <div class="wrapper_content">
-              <div class="label"><p>Email:</p></div>
-              <div class="content"><p>{{user.email}}</p></div>
+            <div class="wrapper_content">
+              <div class="label">
+                <p>Email:</p>
+              </div>
+              <div class="content">
+                <p>{{user.email}}</p>
+              </div>
             </div>
             <div class="wrapper_content">
-              <div class="label"><p>Phone:</p></div>
-              <div class="content"><p>{{user.phone}}</p></div>
+              <div class="label">
+                <p>Phone:</p>
+              </div>
+              <div class="content">
+                <p>{{user.phone}}</p>
+              </div>
             </div>
             <div class="wrapper_content">
-              <div class="label"><p>Lives:</p></div>
-              <div class="content"><p>{{user.country}}</p></div>
+              <div class="label">
+                <p>Lives:</p>
+              </div>
+              <div class="content">
+                <p>{{user.country}}</p>
+              </div>
             </div>
             <div class="wrapper_content">
-              <div class="label"><p>Date of Birth:</p></div>
-              <div class="content"><p>{{user.birth}}</p></div>
+              <div class="label">
+                <p>Date of Birth:</p>
+              </div>
+              <div class="content">
+                <p>{{user.birth}}</p>
+              </div>
             </div>
           </div>
-          </div>
-        </mat-tab>
-        <mat-tab label="Add informatio">Content 3</mat-tab>
-      </mat-tab-group>
-    </div>
-    </div>
-
-
+        </div>
+      </mat-tab>
+      <mat-tab label="Add informatio">Content 3</mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
