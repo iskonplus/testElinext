@@ -51,10 +51,13 @@ h1 {
   align-items: center;
 
   .block_photo {
-    border: 1px solid black;
+    border: 1px solid #999999;
     width: 20%;
     height: 150px;
     margin-right: 10px;
+    img{
+      width: 100%;
+    }
   }
   .block_info {
     width: 100%;

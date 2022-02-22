@@ -1,6 +1,6 @@
 <div class="wrapper_userPage">
   <div class="wrapper_information">
-    <div class="block_photo"></div>
+    <div class="block_photo"><img src="https://cdn.shopify.com/s/files/1/0019/9239/2768/products/Website_Image_Coming_Soon_9f06e67d-75d4-4a41-bcc4-aa01cf3f3a76_1200x1200.jpg?v=1573129133" alt="Photo user"></div>
 
 
     <div class="block_info">
@@ -82,7 +82,7 @@
       </mat-tab>
       <mat-tab label="Add informatio">
         <div class="wrapper_form">
-          <!-- you need to change to component start here -->
+          <!-- convert to component start here -->
           <form #userForm="ngForm">
 
             <div class="wrapper_input">
@@ -123,7 +123,8 @@
 
               <mat-form-field appearance="legacy" class="input">
                 <mat-label>Email</mat-label>
-                <input matInput type="email" placeholder="Email" name="email" #email="ngModel" required [(ngModel)]="user.email" />
+                <input matInput type="email" placeholder="Email" name="email" #email="ngModel" required
+                  [(ngModel)]="user.email" />
                 <mat-error *ngIf="email.hasError('required')">Required field</mat-error>
               </mat-form-field>
             </div>
@@ -131,7 +132,8 @@
             <div class="wrapper_input">
               <mat-form-field appearance="legacy" class="input">
                 <mat-label>Date of Birth</mat-label>
-                <input matInput type="date" placeholder="Date of Birth" name="data" #birth="ngModel" [(ngModel)]="user.birth" />
+                <input matInput type="date" placeholder="Date of Birth" name="data" #birth="ngModel"
+                  [(ngModel)]="user.birth" />
               </mat-form-field>
 
 
@@ -174,9 +176,9 @@
             </div>
 
 
-                    <div class="example-button-row">
-                      <button mat-raised-button color="primary" (click)="submitForm()">Save</button>
-                    </div>
+            <div class="example-button-row">
+              <button mat-raised-button color="primary" (click)="submitForm()">Save</button>
+            </div>
 
           </form>
         </div>
@@ -188,66 +190,80 @@
 </div>
 
 
-<div class="wrapper_userPage">
+<div class="wrapper_userPage" *ngFor="let item of usersInfo">
   <div class="wrapper_tab">
     <mat-tab-group animationDuration="0ms">
-      <mat-tab label="Publications">
-
+      <mat-tab label="{{item.firstName}} {{item.lastName}}">
         <div class="wrapper_information">
+          <div class="block_photo"><img src="https://cdn.shopify.com/s/files/1/0019/9239/2768/products/Website_Image_Coming_Soon_9f06e67d-75d4-4a41-bcc4-aa01cf3f3a76_1200x1200.jpg?v=1573129133" alt="Photo user"></div>
           <div class="block_info">
 
-          </div>
-        </div>
-      </mat-tab>
-      <mat-tab label="Photo">Content 3</mat-tab>
-    </mat-tab-group>
-  </div>
-</div>
+            <!-- -----------convert to component---start--------- -->
 
 
-<div class="wrapper_userPage">
-  <div class="wrapper_tab">
-    <mat-tab-group animationDuration="0ms">
-      <mat-tab label="Information">
-
-        <div class="wrapper_information">
-          <div class="block_info">
-            <div class="wrapper_content">
+            <div class="wrapper_content" *ngIf="item.email">
               <div class="label">
                 <p>Email:</p>
               </div>
               <div class="content">
-                <p>{{user.email}}</p>
+                <p>{{item.email}}</p>
               </div>
             </div>
-            <div class="wrapper_content">
+            <div class="wrapper_content" *ngIf="item.phone">
               <div class="label">
                 <p>Phone:</p>
               </div>
               <div class="content">
-                <p>{{user.phone}}</p>
+                <p>{{item.phone}}</p>
               </div>
             </div>
-            <div class="wrapper_content">
+            <div class="wrapper_content" *ngIf="item.country">
               <div class="label">
                 <p>Lives:</p>
               </div>
               <div class="content">
-                <p>{{user.country}}</p>
+                <p>{{item.country}}, {{item.city}}</p>
               </div>
             </div>
-            <div class="wrapper_content">
+            <div class="wrapper_content" *ngIf="item.birth">
               <div class="label">
                 <p>Date of Birth:</p>
               </div>
               <div class="content">
-                <p>{{user.birth}}</p>
+                <p>{{item.birth}}</p>
               </div>
             </div>
+            <div class="wrapper_content" *ngIf="item.married">
+              <div class="label">
+                <p>Married:</p>
+              </div>
+              <div class="content">
+                <p>{{item.married}}</p>
+              </div>
+            </div>
+            <div class="wrapper_content" *ngIf="item.studied">
+              <div class="label">
+                <p>Studied:</p>
+              </div>
+              <div class="content">
+                <p>{{item.studied}}, {{item.yearsOfStudy}}</p>
+              </div>
+            </div>
+            <div class="wrapper_content" *ngIf="item.work">
+              <div class="label">
+                <p>Work:</p>
+              </div>
+              <div class="content">
+                <p>{{item.work}}, {{item.yearsOfWork}}</p>
+              </div>
+            </div>
+
+            <!-- --------------end---------------- -->
+
           </div>
         </div>
       </mat-tab>
-      <mat-tab label="Add informatio">Content 3</mat-tab>
+
     </mat-tab-group>
   </div>
 </div>

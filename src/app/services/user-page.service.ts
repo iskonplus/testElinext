@@ -6,8 +6,12 @@ import { Injectable } from '@angular/core';
 export class UserPageService {
 
   constructor() { }
-  getUserInfo() {
+  getActiveUserInfo() {
     return JSON.parse(localStorage.getItem('activeUser') || '');
+  }
+
+  getUsersInfo() {
+    return JSON.parse(localStorage.getItem('users') || '');
   }
 
   saveUserInfo(data: any): any {
