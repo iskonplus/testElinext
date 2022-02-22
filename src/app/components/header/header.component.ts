@@ -8,12 +8,11 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
   title = '';
 
-
   constructor(private userLoginService: UserLoginService, private router: Router) { }
-
 
   ngOnInit(): void {
     this.userLoginService.userFullName$.subscribe(name => {
@@ -26,7 +25,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/']);
     this.title = '';
   }
-  
+
   clickLogIn() {
     this.router.navigate(['/', 'login']);
   }

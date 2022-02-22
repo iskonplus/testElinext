@@ -7,6 +7,7 @@ import { HeaderComponent } from './components//header/header.component';
 import { FooterComponent } from './components//footer/footer.component';
 import { MainComponent } from './components//main/main.component';
 import { UserLoginModule } from './pages/user-login/user-login.module';
+import { UserListModule } from './pages/user-list/user-list.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationModule } from './pages/registration/registration.module';
 import { UserPageModule } from './pages/user-page/user-page.module';
@@ -28,7 +29,8 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     RegistrationModule,
     UserPageModule,
-    MatButtonModule
+    MatButtonModule,
+    UserListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

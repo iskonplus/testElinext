@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserPageComponent } from './user-page.component';
-// import { RegistrationModule } from '../registration/registration.module';
+import { UserListComponent } from './user-list.component';
+
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -16,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
-    UserPageComponent
+    UserListComponent
   ],
   imports: [
     CommonModule,
@@ -30,4 +30,4 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
   ]
 })
-export class UserPageModule { }
+export class UserListModule { }
