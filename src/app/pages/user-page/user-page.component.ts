@@ -28,17 +28,11 @@ export class UserPageComponent implements OnInit {
     role: 'user'
   };
 
-  usersInfo: UserInfo[] = [];
-
-
   constructor(private userPageService: UserPageService, private userLoginService: UserLoginService) { }
 
   ngOnInit(): void {
     this.userLoginService.getFirstName();
     this.user = this.userPageService.getActiveUserInfo();
-    this.usersInfo = this.userPageService.getUsersInfo().filter((el: UserInfo) => {
-      return el.email !== this.user.email && el.password !== this.user.password;
-    });
   }
 
   zzz() {
@@ -49,24 +43,4 @@ export class UserPageComponent implements OnInit {
     this.userPageService.saveUserInfo(this.user);
   }
 
-
-
-
-}
-
-interface UserInfo {
-  birth: string;
-  city: string;
-  country: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  password: string;
-  phone: string;
-  work: string;
-  studied: string;
-  yearsOfStudy: string;
-  yearsOfWork: string;
-  married: string;
-  role: string;
 }

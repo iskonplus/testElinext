@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationModule } from './pages/registration/registration.module';
 import { UserPageModule } from './pages/user-page/user-page.module';
 import {MatButtonModule} from '@angular/material/button';
+// import { TestComponent } from './components/test/test.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
     HeaderComponent,
     FooterComponent,
     MainComponent,
+
 
   ],
   imports: [

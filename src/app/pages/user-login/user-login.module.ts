@@ -9,9 +9,10 @@ import { MatIconModule } from '@angular/material/icon';
 
 
 
+
 @NgModule({
   declarations: [
-    UserLoginComponent
+    UserLoginComponent,
   ],
   exports: [
     UserLoginComponent

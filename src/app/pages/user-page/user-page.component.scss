@@ -55,6 +55,7 @@ h1 {
     width: 20%;
     height: 150px;
     margin-right: 10px;
+
     img{
       width: 100%;
     }
@@ -79,10 +80,12 @@ h1 {
       justify-content: flex-start;
       align-items: flex-end;
 
+
       .label {
         width: 30%;
         color: #999999;
       }
+
 
       .content {
         width: 70%;

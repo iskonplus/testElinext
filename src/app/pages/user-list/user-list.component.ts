@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserPageService } from 'src/app/services/user-page.service';
+
+
 
 @Component({
   selector: 'app-user-list',
@@ -7,14 +9,22 @@ import { UserPageService } from 'src/app/services/user-page.service';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
+  @Input('user') user:any;
 
   usersInfo: UserInfo[] = [];
 
   constructor(private userPageService: UserPageService) { }
 
   ngOnInit(): void {
-    this.usersInfo = this.userPageService.getUsersInfo()
+    if (this.user) {
+      this.usersInfo = this.userPageService.getUsersInfo().filter((el: UserInfo) => {
+        return el.email !== this.user.email && el.password !== this.user.password;
+      });
+    } else {
+      this.usersInfo = this.userPageService.getUsersInfo();
+    }
   }
+
 
 }
 
