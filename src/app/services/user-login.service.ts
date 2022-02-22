@@ -22,6 +22,7 @@ export class UserLoginService {
   userFullName = this.userFullName$.asObservable();
 
   getFirstName() {
+    this.activeUser = JSON.parse(localStorage.getItem('activeUser') || '')
     this.userFullName$.next(this.activeUser.firstName);
     return this.activeUser.firstName;
   }
@@ -32,11 +33,14 @@ export class UserLoginService {
       if ((el.email === data.email && el.password === data.password)) {
         this.checkLog = true;
         this.activeUser = el;
-        this.getFirstName();
         localStorage.setItem('activeUser', JSON.stringify(this.activeUser));
       }
     })
     return this.checkLog;
+  }
+
+  logOut(){
+    localStorage.removeItem('activeUser');
   }
 
 

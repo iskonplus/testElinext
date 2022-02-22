@@ -7,6 +7,7 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
 
 const routes: Routes = [
 	{ path: '', component: UserLoginComponent},
+	{ path: 'login', component: UserLoginComponent},
 	{ path: 'registration', component: RegistrationComponent},
 	{ path: 'user', component: UserPageComponent},
 ];
