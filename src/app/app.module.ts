@@ -11,8 +11,9 @@ import { UserListModule } from './pages/user-list/user-list.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationModule } from './pages/registration/registration.module';
 import { UserPageModule } from './pages/user-page/user-page.module';
-import {MatButtonModule} from '@angular/material/button';
-// import { TestComponent } from './components/test/test.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {MatButtonModule} from '@angular/material/button';
     RegistrationModule,
     UserPageModule,
     MatButtonModule,
-    UserListModule
+    UserListModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

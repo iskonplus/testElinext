@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationService } from 'src/app/services/notification.service';
 import { UserLoginService } from 'src/app/services/user-login.service';
 import { UserPageService } from 'src/app/services/user-page.service';
 
@@ -28,7 +29,10 @@ export class UserPageComponent implements OnInit {
     role: 'user'
   };
 
-  constructor(private userPageService: UserPageService, private userLoginService: UserLoginService) { }
+  constructor(private userPageService: UserPageService,
+    private userLoginService: UserLoginService,
+    private notificationService: NotificationService,
+  ) { }
 
   ngOnInit(): void {
     this.userLoginService.getFirstName();
@@ -37,9 +41,11 @@ export class UserPageComponent implements OnInit {
 
   zzz() {
     console.log(this.user.studied);
+    this.notificationService.error('Oops, something went wrong!');
   }
 
   submitForm() {
+    this.notificationService.error(`${this.user.firstName}, information has been changed.`);
     this.userPageService.saveUserInfo(this.user);
   }
 
