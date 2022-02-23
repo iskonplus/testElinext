@@ -13,6 +13,25 @@
   flex-direction: column;
   // background-color: #cccccc;
 }
+.app-snackbar-success {
+  background-color: #3F51B5;
+  color: #ffffff;
+
+  .mat-simple-snackbar-action {
+    color: #ffffff9a;
+
+  }
+}
+
+.app-snackbar-error {
+  background-color: #f0554a;
+  color: #ffffff;
+
+  .mat-simple-snackbar-action {
+    color: #ffffff9a;
+
+  }
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

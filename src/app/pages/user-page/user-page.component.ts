@@ -45,7 +45,7 @@ export class UserPageComponent implements OnInit {
   }
 
   submitForm() {
-    this.notificationService.error(`${this.user.firstName}, information has been changed.`);
+    this.notificationService.success(`${this.user.firstName}, information has been changed.`);
     this.userPageService.saveUserInfo(this.user);
   }
 
