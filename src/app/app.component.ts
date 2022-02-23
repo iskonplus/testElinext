@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserLoginService } from './services/user-login.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'testElinext';
+
+  constructor(private userLoginService: UserLoginService) { }
+  ngOnInit(): void {
+    this.userLoginService.createDefaultUsers();
+    this.userLoginService.getActiveUser();
+    
+
+  }
 }

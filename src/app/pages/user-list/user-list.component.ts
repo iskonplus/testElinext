@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UserLoginService } from 'src/app/services/user-login.service';
 import { UserPageService } from 'src/app/services/user-page.service';
 
 
@@ -13,12 +14,13 @@ export class UserListComponent implements OnInit {
 
   usersInfo: UserInfo[] = [];
 
-  constructor(private userPageService: UserPageService) { }
+  constructor(private userPageService: UserPageService, private userLoginService: UserLoginService) { }
 
   ngOnInit(): void {
+    // this.userLoginService.createDefaultUsers();
     if (this.user) {
       this.usersInfo = this.userPageService.getUsersInfo().filter((el: UserInfo) => {
-        return el.email !== this.user.email && el.password !== this.user.password;
+        return el.email !== this.user.email && el.password !== this.user.password && el.role !== 'admin';
       });
     } else {
       this.usersInfo = this.userPageService.getUsersInfo();

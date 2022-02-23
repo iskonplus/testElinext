@@ -35,7 +35,7 @@ export class UserPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userLoginService.getFirstName();
+    // this.userLoginService.getFirstName();
     this.user = this.userPageService.getActiveUserInfo();
   }
 

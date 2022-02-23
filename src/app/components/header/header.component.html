@@ -2,7 +2,7 @@
   <div class="container">
     <a href="/">TestElinext</a>
     <div class="wrapper_log">
-      <p *ngIf="title">{{title}}</p>
+      <p *ngIf="title" (click)="goHome()" >{{title}}</p>
       <button mat-stroked-button *ngIf="!title"(click)="clickLogIn()" >Login</button>
       <button mat-stroked-button *ngIf="title" (click)="clickLogOut()" >Logout</button>
     </div>

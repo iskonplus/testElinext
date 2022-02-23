@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { Router } from '@angular/router';
 import { NotificationService } from 'src/app/services/notification.service';
+import { UserLoginService } from 'src/app/services/user-login.service';
+
 
 
 @Component({
@@ -28,18 +30,22 @@ export class RegistrationComponent implements OnInit {
 
   constructor(
     private notificationService: NotificationService,
-    private router: Router,
-    private registrationService: RegistrationService) { }
+    private router: Router, private registrationService: RegistrationService,
+    private userLoginService: UserLoginService  ) { }
 
     ngOnInit(): void {
   }
 
   submitForm() {
-    this.notificationService.error('Fill in the required fields');
-    this.registrationService.saveUser(this.usersForm);
-    this.router.navigate(['/login']);
-  }
 
+    if (this.userLoginService.activeUser.role !== 'admin') {
+      this.router.navigate(['/login']);
+      this.registrationService.saveUser(this.usersForm);
+    } else {
+      this.notificationService.success(`User ${this.usersForm.firstName} created.`);
+    }
+
+  }
 
 
 }

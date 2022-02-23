@@ -8,6 +8,7 @@ import { FooterComponent } from './components//footer/footer.component';
 import { MainComponent } from './components//main/main.component';
 import { UserLoginModule } from './pages/user-login/user-login.module';
 import { UserListModule } from './pages/user-list/user-list.module';
+import { AdminPageModule } from './pages/admin-page/admin-page.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationModule } from './pages/registration/registration.module';
 import { UserPageModule } from './pages/user-page/user-page.module';
@@ -34,7 +35,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     UserPageModule,
     MatButtonModule,
     UserListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    AdminPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

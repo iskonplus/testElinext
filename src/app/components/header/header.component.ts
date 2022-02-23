@@ -15,9 +15,10 @@ export class HeaderComponent implements OnInit {
   constructor(private userLoginService: UserLoginService, private router: Router) { }
 
   ngOnInit(): void {
-    this.userLoginService.userFullName$.subscribe(name => {
-      this.title = name;
-    })
+    // this.userLoginService.userFullName$.subscribe(name => {
+    //   this.title = name;
+    // })
+    this.title = this.userLoginService.activeUser?.firstName;
   }
 
   clickLogOut() {
@@ -28,6 +29,10 @@ export class HeaderComponent implements OnInit {
 
   clickLogIn() {
     this.router.navigate(['/', 'login']);
+  }
+
+  goHome() {
+    this.router.navigate(['/', this.userLoginService.activeUser.role]);
   }
 
 
