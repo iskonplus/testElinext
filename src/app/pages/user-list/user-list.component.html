@@ -1,5 +1,6 @@
-<div class="wrapper_userPage" *ngFor="let item of usersInfo">
-  <div class="wrapper_tab">
+<div  *ngFor="let item of usersInfo" >
+<div class="wrapper_userPage" *ngIf="item.role!=='admin'">
+  <div class="wrapper_tab" >
     <mat-tab-group animationDuration="0ms">
       <mat-tab label="{{item.firstName}} {{item.lastName}}">
         <div class="wrapper_information">
@@ -70,5 +71,6 @@
 
     </mat-tab-group>
   </div>
+</div>
 </div>
 

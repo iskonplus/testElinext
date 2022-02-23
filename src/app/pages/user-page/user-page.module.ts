@@ -32,6 +32,9 @@ import { UserListModule } from '../user-list/user-list.module';
     MatInputModule,
     MatButtonModule,
     UserListModule
+  ],
+  exports: [
+    UserPageComponent
   ]
 })
 export class UserPageModule { }

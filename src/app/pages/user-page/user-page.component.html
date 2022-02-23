@@ -1,6 +1,8 @@
 <div class="wrapper_userPage">
   <div class="wrapper_information">
-    <div class="block_photo"><img src="https://cdn.shopify.com/s/files/1/0019/9239/2768/products/Website_Image_Coming_Soon_9f06e67d-75d4-4a41-bcc4-aa01cf3f3a76_1200x1200.jpg?v=1573129133" alt="Photo user"></div>
+    <div class="block_photo"><img
+        src="https://cdn.shopify.com/s/files/1/0019/9239/2768/products/Website_Image_Coming_Soon_9f06e67d-75d4-4a41-bcc4-aa01cf3f3a76_1200x1200.jpg?v=1573129133"
+        alt="Photo user"></div>
 
 
     <div class="block_info">
@@ -14,7 +16,8 @@
     </div>
 
     <div class="wrapper_button_delete" *ngIf="user.role==='admin'">
-      <button mat-raised-button color="primary" class="example-button-row delete_user" (click)="submitForm()">Delete</button>
+      <button mat-raised-button color="primary" class="example-button-row delete_user"
+        (click)="submitForm()">Delete</button>
     </div>
   </div>
 
@@ -193,4 +196,4 @@
   </div>
 </div>
 
-<app-user-list [user]="user"></app-user-list>
+<app-user-list [user]="user" *ngIf="user.role !=='admin' "></app-user-list>
