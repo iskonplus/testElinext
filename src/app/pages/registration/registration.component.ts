@@ -25,6 +25,8 @@ export class RegistrationComponent implements OnInit {
     married: null,
     role: 'user'
   };
+  
+  validEmail = '^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$';
 
   hide = true;
 

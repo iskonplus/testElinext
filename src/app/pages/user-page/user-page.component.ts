@@ -72,7 +72,6 @@ export class UserPageComponent implements OnInit {
       e.path[4].remove();
       this.adminPageService.removeUser(user)
     }
-    // "mat-button-wrapper"
   }
 
 }
