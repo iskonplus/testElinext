@@ -14,9 +14,6 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     RegistrationComponent
   ],
-  exports: [
-    RegistrationComponent
-  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -24,7 +21,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-
+  ],
+  exports: [
+    RegistrationComponent
   ]
 })
 export class RegistrationModule { }

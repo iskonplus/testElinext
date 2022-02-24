@@ -7,6 +7,23 @@ align-items: center;
 padding: 20px 15px;
 }
 
+.wrapper_log{
+  display: flex;
+  align-items: center;
+
+  p{
+    margin: 0px 20px 0px 0px;
+    line-height: 0;
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  p:hover{
+    color: #3F51B5;
+  }
+
+}
+
 a{
   font-size: 20px;
   color: #646464;

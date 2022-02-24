@@ -11,7 +11,7 @@
             [(ngModel)]="usersForm.firstName" />
           <mat-error *ngIf="firstName.hasError('required')">Required field</mat-error>
         </mat-form-field>
-        
+
 
         <mat-form-field appearance="outline" class="input">
           <mat-label>Last name</mat-label>
@@ -36,25 +36,27 @@
       <div class="wrapper_input">
         <mat-form-field appearance="outline" class="input">
           <mat-label>Phone</mat-label>
-          <input matInput placeholder="+000-00-00-00-000" name="phone" #phone="ngModel" [(ngModel)]="usersForm.phone" />
+          <input matInput type="phone"  placeholder="+000-00-00-00-000" name="phone" #phone="ngModel" [(ngModel)]="usersForm.phone" />
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="input">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email" name="email" #email="ngModel" required [(ngModel)]="usersForm.email" />
+          <input matInput type="email"  placeholder="Email" name="email"
+           #email="ngModel" required [(ngModel)]="usersForm.email"
+           [pattern]="validEmail" />
           <mat-error *ngIf="email.hasError('required')">Required field</mat-error>
         </mat-form-field>
       </div>
 
       <mat-form-field appearance="outline">
         <mat-label>Date of Birth</mat-label>
-        <input matInput placeholder="Date of Birth" name="birth" #birth="ngModel" [(ngModel)]="usersForm.birth" />
+        <input matInput type="date" placeholder="Date of Birth" name="birth" #birth="ngModel" [(ngModel)]="usersForm.birth" />
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Education</mat-label>
-        <input matInput placeholder="Education" name="education" #education="ngModel"
-          [(ngModel)]="usersForm.education" />
+        <mat-label>Married</mat-label>
+        <input matInput placeholder="Ivanov Ivan" name="married" #married="ngModel"
+          [(ngModel)]="usersForm.married" />
       </mat-form-field>
 
       <div class="wrapper_input">
@@ -77,7 +79,7 @@
       </div>
 
       <div class="example-button-row">
-        <button mat-raised-button color="primary" (click)="submitForm()">Send</button>
+        <button mat-raised-button color="primary" (click)="submitForm(userForm)">Send</button>
       </div>
 
     </form>

@@ -1,0 +1,125 @@
+.wrapper_userPage {
+  width: 60%;
+  margin: auto;
+  padding: 40px 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 34px;
+  color: #3f51b5;
+}
+
+.wrapper_tab {
+  width: 700px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  .wrapper_form {
+    height: 230px;
+    margin-top: 10px;
+    overflow-y: scroll;
+
+    .wrapper_input {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      .input {
+        width: 50%;
+        margin-right: 10px;
+      }
+    }
+
+    .wrapper_input.whole_length{
+      .input {
+        width: 100%;
+        margin-right: 10px;
+
+      }
+    }
+  }
+}
+
+.wrapper_information {
+  position: relative;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+
+  .block_photo {
+    border: 1px solid #999999;
+    width: 20%;
+    height: 150px;
+    margin-right: 10px;
+
+    img{
+      width: 100%;
+    }
+  }
+  .block_info {
+    width: 100%;
+    margin-left: 10px;
+    text-align: start;
+    display: flex;
+    flex-wrap: wrap;
+
+    form {
+      width: 80%;
+      :first-child {
+        width: 100%;
+      }
+    }
+
+    .wrapper_content {
+      width: 50%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+
+      .label {
+        width: 30%;
+        color: #999999;
+      }
+
+
+      .content {
+        width: 70%;
+        color: #000000;
+        font-size: 16px;
+      }
+    }
+  }
+
+}
+.wrapper_button_delete{
+  position: absolute;
+  top:0;
+  right: 10%;
+}
+
+.example-button-row.delete_user{
+  background-color: #EDEEF0;
+  color: #000000;
+  position: absolute;
+}
+.example-button-row.delete_user{
+  background-color: #EDEEF0;
+  color: #000000;
+}
+.example-button-row.delete_user:hover{
+  background-color: #f15135;
+  color: #000000;
+}
+
+.buttonAdd{
+  background-color: #fff;
+  margin-right: 10px;
+  color:#3f51b5;
+  border-radius: 5px;
+}

@@ -37,8 +37,8 @@ export class UserLoginComponent implements OnInit {
     } else {
       this.errorLogIn = 'p_error';
 
-      if (this.userLoginService.userLogin(this.userLoginData)) {
-        this.router.navigate(['/', this.userLoginService.role]);
+      if (this.userLoginService.checkUserLogin(this.userLoginData)) {
+        this.router.navigate(['/', this.userLoginService.activeUser.role]);
       } else {
               this.errorLogInTwo = 'p_error'
               this.errorLogInTwo = 'p_error two active';

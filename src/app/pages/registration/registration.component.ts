@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/services/notification.service';
+import { UserLoginService } from 'src/app/services/user-login.service';
+
 
 
 @Component({
@@ -11,32 +14,47 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
 
   usersForm = {
-    firstName: '',
-    lastName: '',
-    password: '',
-    email: '',
-    education: '',
-    phone: '',
-    country: '',
-    city: '',
-    birth: '',
-    role: 'user',
-    fullName: function () {
-    return `${this.firstName} ${this.lastName[0]}.`
-    }
+    birth: null,
+    city: null,
+    country: null,
+    email: null,
+    firstName: null,
+    lastName: null,
+    password: null,
+    phone: null,
+    married: null,
+    role: 'user'
   };
+  
+  validEmail = '^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$';
 
   hide = true;
 
-  constructor(private router: Router, private registrationService:RegistrationService) { }
+  constructor(
+    private notificationService: NotificationService,
+    private router: Router, private registrationService: RegistrationService,
+    private userLoginService: UserLoginService  ) { }
 
-  submitForm() {
-    this.registrationService.saveUser(this.usersForm);
-    this.router.navigate(['/']);
+    ngOnInit(): void {
   }
 
+  submitForm(userForm: any) {
 
-  ngOnInit(): void {
+    if (userForm.valid) {
+      if (this.userLoginService.activeUser.role !== 'admin') {
+        this.router.navigate(['/login']);
+        this.registrationService.saveUser(this.usersForm);
+      } else {
+        this.notificationService.success(`User ${this.usersForm.firstName} created.`);
+        this.registrationService.saveUser(this.usersForm);
+      }
+    } else {
+      this.notificationService.success('Fill in all required fields.');
+    }
+
+
+
   }
+
 
 }
