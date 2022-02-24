@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AdminPageService } from 'src/app/services/admin-page.service';
 import { NotificationService } from 'src/app/services/notification.service';
 import { UserLoginService } from 'src/app/services/user-login.service';
 import { UserPageService } from 'src/app/services/user-page.service';
@@ -39,6 +40,7 @@ export class UserPageComponent implements OnInit {
 
   constructor(private userPageService: UserPageService,
     private userLoginService: UserLoginService,
+    private adminPageService: AdminPageService,
     private notificationService: NotificationService,
   ) { }
 
@@ -64,10 +66,11 @@ export class UserPageComponent implements OnInit {
   }
 
   deleteUser(e: any, user: any) {
-    // console.log(user)
-    console.log(e)
+    console.log(user)
+    // console.log(e)
     if (e.target.innerHTML==="Delete") {
       e.path[4].remove();
+      this.adminPageService.removeUser(user)
     }
     // "mat-button-wrapper"
   }
