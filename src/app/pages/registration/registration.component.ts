@@ -36,14 +36,21 @@ export class RegistrationComponent implements OnInit {
     ngOnInit(): void {
   }
 
-  submitForm() {
+  submitForm(userForm: any) {
 
-    if (this.userLoginService.activeUser.role !== 'admin') {
-      this.router.navigate(['/login']);
-      this.registrationService.saveUser(this.usersForm);
+    if (userForm.valid) {
+      if (this.userLoginService.activeUser.role !== 'admin') {
+        this.router.navigate(['/login']);
+        this.registrationService.saveUser(this.usersForm);
+      } else {
+        this.notificationService.success(`User ${this.usersForm.firstName} created.`);
+        this.registrationService.saveUser(this.usersForm);
+      }
     } else {
-      this.notificationService.success(`User ${this.usersForm.firstName} created.`);
+      this.notificationService.success('Fill in all required fields.');
     }
+
+
 
   }
 

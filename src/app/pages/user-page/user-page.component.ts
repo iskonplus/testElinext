@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NotificationService } from 'src/app/services/notification.service';
 import { UserLoginService } from 'src/app/services/user-login.service';
 import { UserPageService } from 'src/app/services/user-page.service';
@@ -11,6 +11,14 @@ import { UserPageService } from 'src/app/services/user-page.service';
   styleUrls: ['./user-page.component.scss']
 })
 export class UserPageComponent implements OnInit {
+
+  @Input('use') use: any;
+
+  activeUser = {
+    role: '',
+    firstName: '',
+    lastName: ''
+  }
 
   user = {
     birth: null,
@@ -35,8 +43,14 @@ export class UserPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.userLoginService.getFirstName();
-    this.user = this.userPageService.getActiveUserInfo();
+
+    if (this.use) {
+      this.user = this.use;
+      this.activeUser = this.userLoginService.activeUser;
+    } else {
+
+      this.user = this.userPageService.getActiveUserInfo();
+    }
   }
 
   zzz() {
@@ -49,4 +63,14 @@ export class UserPageComponent implements OnInit {
     this.userPageService.saveUserInfo(this.user);
   }
 
+  deleteUser(e: any, user: any) {
+    // console.log(user)
+    console.log(e)
+    if (e.target.innerHTML==="Delete") {
+      e.path[4].remove();
+    }
+    // "mat-button-wrapper"
+  }
+
 }
+
