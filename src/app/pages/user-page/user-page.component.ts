@@ -66,7 +66,6 @@ export class UserPageComponent implements OnInit {
   }
 
   deleteUser(e: any, user: any) {
-    console.log(user)
     // console.log(e)
     if (e.target.innerHTML==="Delete") {
       e.path[4].remove();
