@@ -6,8 +6,8 @@
     <form #userForm="ngForm">
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput name="email" #emailId="ngModel" [(ngModel)]="userLoginData.email" required placeholder="ex@ex.ex"
-          [pattern]="validEmail" />
+        <input matInput name="email" #emailId="ngModel" [(ngModel)]="userLoginData.email" required
+          placeholder="ex@ex.ex" [pattern]="validEmail" />
         <mat-error *ngIf="emailId.hasError('required')">Required field</mat-error>
         <mat-error *ngIf="emailId.hasError('pattern')">Email incorrect</mat-error>
       </mat-form-field>
@@ -39,5 +39,3 @@
 
   </div>
 </div>
-
-

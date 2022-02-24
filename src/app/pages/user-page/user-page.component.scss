@@ -35,11 +35,10 @@ h1 {
       }
     }
 
-    .wrapper_input.whole_length{
+    .wrapper_input.whole_length {
       .input {
         width: 100%;
         margin-right: 10px;
-
       }
     }
   }
@@ -57,7 +56,7 @@ h1 {
     height: 150px;
     margin-right: 10px;
 
-    img{
+    img {
       width: 100%;
     }
   }
@@ -81,12 +80,10 @@ h1 {
       justify-content: flex-start;
       align-items: flex-end;
 
-
       .label {
         width: 30%;
         color: #999999;
       }
-
 
       .content {
         width: 70%;
@@ -95,31 +92,30 @@ h1 {
       }
     }
   }
-
 }
-.wrapper_button_delete{
+.wrapper_button_delete {
   position: absolute;
-  top:0;
+  top: 0;
   right: 10%;
 }
 
-.example-button-row.delete_user{
-  background-color: #EDEEF0;
+.example-button-row.delete_user {
+  background-color: #edeef0;
   color: #000000;
   position: absolute;
 }
-.example-button-row.delete_user{
-  background-color: #EDEEF0;
+.example-button-row.delete_user {
+  background-color: #edeef0;
   color: #000000;
 }
-.example-button-row.delete_user:hover{
+.example-button-row.delete_user:hover {
   background-color: #f15135;
   color: #000000;
 }
 
-.buttonAdd{
+.buttonAdd {
   background-color: #fff;
   margin-right: 10px;
-  color:#3f51b5;
+  color: #3f51b5;
   border-radius: 5px;
 }

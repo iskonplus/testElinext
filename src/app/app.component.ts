@@ -13,7 +13,5 @@ export class AppComponent {
   ngOnInit(): void {
     this.userLoginService.createDefaultUsers();
     this.userLoginService.getActiveUser();
-    
-
   }
 }

@@ -15,9 +15,6 @@ export class HeaderComponent implements OnInit {
   constructor(private userLoginService: UserLoginService, private router: Router) { }
 
   ngOnInit(): void {
-    // this.userLoginService.userFullName$.subscribe(name => {
-    //   this.title = name;
-    // })
     this.title = this.userLoginService.activeUser?.firstName;
   }
 

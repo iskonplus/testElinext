@@ -1,4 +1,4 @@
-.wrapper_registration{
+.wrapper_registration {
   width: 60%;
   margin: auto;
   margin-bottom: 20px;
@@ -7,14 +7,14 @@
   border-radius: 5px;
 }
 
-h2{
+h2 {
   text-align: center;
   font-size: 34px;
-  color: #3F51B5;
+  color: #3f51b5;
   margin-bottom: 40px;
 }
 
-form{
+form {
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -26,21 +26,20 @@ form{
   }
 }
 
-.wrapper_input{
-display: flex;
-width: 100%;
-justify-content: space-between;
+.wrapper_input {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 
-.input{
-  width: 50%;
-}
+  .input {
+    width: 50%;
+  }
 
-.input:first-child{
-  margin-right: 5px;
-}
+  .input:first-child {
+    margin-right: 5px;
+  }
 
-.input:last-child{
-  margin-left: 5px;
-}
-
+  .input:last-child {
+    margin-left: 5px;
+  }
 }

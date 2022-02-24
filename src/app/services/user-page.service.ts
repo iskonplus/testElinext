@@ -15,20 +15,18 @@ export class UserPageService {
   }
 
   saveUserInfo(data: any): any {
-
-    // console.log(data)
     let usersdateLocalStorage = JSON.parse(localStorage.getItem('users') || '')
       .map((el: any) => {
-      if ((el.email === data.email && el.password === data.password)) {
-        return el = data;
-      } else {
-        return el;
-      }
+        if ((el.email === data.email && el.password === data.password)) {
+          return el = data;
+        } else {
+          return el;
+        }
 
-    });
+      });
 
     localStorage.setItem('users', JSON.stringify(usersdateLocalStorage));
-    this.getActiveUserInfo().role !== 'admin'&& localStorage.setItem('activeUser', JSON.stringify(data));
+    this.getActiveUserInfo().role !== 'admin' && localStorage.setItem('activeUser', JSON.stringify(data));
   }
 
 }

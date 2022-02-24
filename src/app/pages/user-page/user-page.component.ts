@@ -66,8 +66,8 @@ export class UserPageComponent implements OnInit {
   }
 
   deleteUser(e: any, user: any) {
-    // console.log(e)
-    if (e.target.innerHTML==="Delete") {
+    if (e.target.innerHTML === "Delete") {
+      this.notificationService.natif(`You have deleted a user ${user.firstName}.`)
       e.path[4].remove();
       this.adminPageService.removeUser(user)
     }

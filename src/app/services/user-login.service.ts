@@ -17,18 +17,15 @@ export class UserLoginService {
   }
 
   defaultUsers = [
-    {birth: "1986-09-16", city: "Minsk", country: "Belarus", email: "qq@qq.qq", firstName: "Artur", lastName: "Tamashevich", married: "Veronica Tamashevich", password: "qq", phone: "+375298523553", role: "user"},
-    {birth: "1999-02-21", city: "Grodnj", country: "Belarus", email: "aa@aa.aa", firstName: "Dima", lastName: "Ivanov", married: null, password: "aa", phone: "+375292834773", role: "user"},
-    {birth: "2006-06-18", city: "NY", country: "USA", email: "zz@zz.zz", firstName: "Jon", lastName: "Smit", married: "Meri Smit", password: "zz", phone: null, role: "user"},
-    {birth: "1996-12-16", city: "Moscow", country: "Russia", email: "ww@ww.ww", firstName: "Ivan", lastName: "Petrov", married: null, password: "ww", phone: null, role: "user"},
-    { email: "ad@ad.ad", password: "ad", role: "admin", firstName: "Admin"}
-      ]
+    { birth: "1986-09-16", city: "Minsk", country: "Belarus", email: "qq@qq.qq", firstName: "Artur", lastName: "Tamashevich", married: "Veronica Tamashevich", password: "qq", phone: "+375298523553", role: "user" },
+    { birth: "1999-02-21", city: "Grodnj", country: "Belarus", email: "aa@aa.aa", firstName: "Dima", lastName: "Ivanov", married: null, password: "aa", phone: "+375292834773", role: "user" },
+    { birth: "2006-06-18", city: "NY", country: "USA", email: "zz@zz.zz", firstName: "Jon", lastName: "Smit", married: "Meri Smit", password: "zz", phone: null, role: "user" },
+    { birth: "1996-12-16", city: "Moscow", country: "Russia", email: "ww@ww.ww", firstName: "Ivan", lastName: "Petrov", married: null, password: "ww", phone: null, role: "user" },
+    { email: "ad@ad.ad", password: "ad", role: "admin", firstName: "Admin" }
+  ]
 
 
   constructor() { }
-
-  // userFullName$ = new Subject<string>();
-  // userFullName = this.userFullName$.asObservable();
 
   createDefaultUsers() {
     if (!localStorage.getItem('users')) {
@@ -60,8 +57,12 @@ export class UserLoginService {
     }
   }
 
-  logOut(){
+  logOut() {
     localStorage.removeItem('activeUser');
+  }
+
+  getRole() {
+    return this.activeUser.role
   }
 
 

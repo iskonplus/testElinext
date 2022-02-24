@@ -15,8 +15,8 @@ export class AdminPageService {
 
     let newUsers = JSON.parse(localStorage.getItem('users') || '')
       .filter((el: any) => {
-      return el.email !== user.email && el.password !== user.password;
-    });
+        return el.email !== user.email && el.password !== user.password;
+      });
     localStorage.setItem('users', JSON.stringify(newUsers));
 
   }

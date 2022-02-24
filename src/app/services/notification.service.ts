@@ -31,5 +31,13 @@ export class NotificationService {
 
   }
 
+  natif(message: string) {
+    this.snackBar.open(message, '', {
+      verticalPosition: this.verticalPosition,
+      duration: this.isTimeOut,
+      panelClass: 'app-snackbar-error',
+    });
+  }
+
 
 }
